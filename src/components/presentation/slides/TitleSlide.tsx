@@ -79,27 +79,37 @@ export const TitleSlide: React.FC<TitleSlideProps> = ({ isActive }) => {
           ))}
         </div>
 
-        {/* Team */}
+        {/* Team & Course Info Block */}
         <div 
-          className="animate-slide-up"
+          className="mt-8 animate-slide-up flex flex-col items-center gap-6"
           style={{ animationDelay: "400ms" }}
         >
-          <div className="text-sm text-muted-foreground font-sans mb-3">Group 06</div>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-foreground/70 font-sans">
-            {teamMembers.map((member, i) => (
-              <span key={i}>
-                {member}
-                {i < teamMembers.length - 1 && <span className="text-primary mx-2">•</span>}
-              </span>
-            ))}
+          {/* Bloc Équipe */}
+          <div className="flex flex-col items-center">
+            <div className="text-sm font-sans font-bold tracking-[0.2em] uppercase text-primary mb-3">
+              Group 06
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 px-6 text-sm text-foreground/80 font-sans text-center">
+              {teamMembers.map((member, i) => (
+                <React.Fragment key={i}>
+                  <span className="whitespace-nowrap">{member}</span>
+                  {i < teamMembers.length - 1 && (
+                    /* Points NÉON plus lumineux */
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_12px_rgba(var(--primary),1)] animate-pulse" />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Bottom decorative line */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4">
-          <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary/50" />
-          <span className="text-xs text-muted-foreground font-sans">LLSMG2003 • 2025-2026</span>
-          <div className="w-16 h-px bg-gradient-to-l from-transparent to-primary/50" />
+          {/* Bloc Cours intégré au flux */}
+          <div className="flex items-center gap-4 pt-4 border-t border-primary/20">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary/50" />
+            <span className="text-xs text-muted-foreground font-sans tracking-widest uppercase">
+              LLSMG2003 • 2025-2026
+            </span>
+            <div className="w-8 h-px bg-gradient-to-l from-transparent to-primary/50" />
+          </div>
         </div>
       </div>
     </SlideContainer>

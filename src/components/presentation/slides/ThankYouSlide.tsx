@@ -24,28 +24,23 @@ export const ThankYouSlide: React.FC<ThankYouSlideProps> = ({ isActive }) => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8">
-        {/* Main title */}
-        <h1 
-          className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up"
-          style={{ animationDelay: "0ms" }}
-        >
-          <span className="text-gradient-gold">Thank You</span>
-        </h1>
-
-        {/* Subtitle */}
-        <p 
-          className="text-xl md:text-2xl text-muted-foreground font-sans font-light max-w-2xl mb-8 animate-slide-up"
-          style={{ animationDelay: "100ms" }}
-        >
-          Questions & Discussion
-        </p>
+      {/* Content - justify-center s'occupe de tout centrer verticalement */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8 gap-y-10" style={{ paddingTop: "8rem" }}>
+        
+        {/* Main title & Subtitle */}
+        <div className="animate-slide-up" style={{ animationDelay: "0ms" }}>
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+            <span className="text-gradient-gold">Thank You</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground font-sans font-light max-w-2xl">
+            Questions & Discussion
+          </p>
+        </div>
 
         {/* Key takeaways */}
         <div 
-          className="flex flex-wrap justify-center gap-6 mb-12 animate-slide-up"
-          style={{ animationDelay: "200ms" }}
+          className="flex flex-wrap justify-center gap-6 animate-slide-up"
+          style={{ animationDelay: "100ms" }}
         >
           {[
             { icon: "🎯", label: "32 Optimized Centres" },
@@ -63,30 +58,38 @@ export const ThankYouSlide: React.FC<ThankYouSlideProps> = ({ isActive }) => {
           ))}
         </div>
 
-        {/* Team */}
+        {/* Team & Course Info Block (Sans mt-12 pour rester centré) */}
         <div 
-          className="animate-slide-up"
-          style={{ animationDelay: "300ms" }}
+          className="animate-slide-up flex flex-col items-center gap-8"
+          style={{ animationDelay: "200ms" }}
         >
-          <div className="text-sm text-primary font-sans font-medium mb-3">Group 06</div>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-foreground/80 font-sans">
-            {teamMembers.map((member, i) => (
-              <span key={i}>{member}</span>
-            ))}
+          {/* Bloc Équipe */}
+          <div className="flex flex-col items-center">
+            <div className="text-sm font-sans font-bold tracking-[0.2em] uppercase text-primary mb-3">
+              Group 06
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 px-6 text-sm text-foreground/80 font-sans text-center">
+              {teamMembers.map((member, i) => (
+                <React.Fragment key={i}>
+                  <span className="whitespace-nowrap">{member}</span>
+                  {i < teamMembers.length - 1 && (
+                    /* Points NÉON plus lumineux */
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_12px_rgba(var(--primary),1)] animate-pulse" />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Course info */}
-        <div 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 animate-fade-in"
-          style={{ animationDelay: "400ms" }}
-        >
-          <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary/50" />
-          <div className="text-center">
-            <div className="text-xs text-muted-foreground font-sans">LLSMG2003 • Production & Operations Modelling</div>
-            <div className="text-xs text-muted-foreground font-sans mt-1">Prof. Nishant Mishra • Academic Year 2025-2026</div>
+          {/* Infos détaillées du cours */}
+          <div className="flex flex-col items-center gap-2 pt-14 border-t border-border/50 min-w-[300px]">
+            <div className="text-xs text-muted-foreground font-sans uppercase tracking-widest">
+              LLSMG2003 • Production & Operations Modelling
+            </div>
+            <div className="text-[11px] text-primary/70 font-sans italic">
+              Professor: Nishant Mishra • Academic Year 2025-2026
+            </div>
           </div>
-          <div className="w-16 h-px bg-gradient-to-l from-transparent to-primary/50" />
         </div>
       </div>
     </SlideContainer>

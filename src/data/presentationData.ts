@@ -82,14 +82,15 @@ export const networkByCountry = [
 
 // Key Metrics
 export const keyMetrics = {
-  totalCenters: 32,
+  totalCenters: 33, // Total potential sites mentioned in introduction
+  openedCenters: 32, // Based on Table 2 and Table 9
   closedCenters: 1,
-  closedCenter: "Leicester",
-  baseCost: 483149217,
-  flexibleCost: 323630114,
-  costReduction: 33,
-  overcapacityUnits: 2439600,
-  hydrogenSavings: 148000000,
+  closedCenter: "Leicester", // As noted in section 3.1
+  baseCost: 483149217, // From section 3.1 Results
+  flexibleCost: 323630114, // From section 3.2 Results
+  costReduction: 33.0,
+  overcapacityUnits: 2439600, // From Table 3
+  hydrogenSavings: 148163132, // Precise annual saving from Table 11
   demandReduction2021: 20,
 };
 
@@ -106,7 +107,7 @@ export const teamMembers = [
   "Massika Nkembo Noévie",
   "Marcelin Nervelie",
   "Liberté-Vayana Massan à Nana Bravy",
-  "Tatys Costodes Tystoline",
+  "Tatys costodes Tystoline mad-vissy",
   "Keita Aboubacar",
 ];
 
