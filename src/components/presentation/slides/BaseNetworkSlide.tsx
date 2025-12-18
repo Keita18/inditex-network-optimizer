@@ -20,12 +20,12 @@ export const BaseNetworkSlide: React.FC<BaseNetworkSlideProps> = ({ isActive }) 
   return (
     <SlideContainer isActive={isActive}>
       <SectionTitle 
-        number="06" 
+        number="3.1" 
         title="Scenario Q3: Base Network" 
         subtitle="Standard Configuration Results"
       />
 
-      <div className="flex-1 flex flex-col gap-5">
+      <div className="flex flex-col gap-4 min-h-0">
         {/* Key Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <MetricCard
@@ -50,7 +50,7 @@ export const BaseNetworkSlide: React.FC<BaseNetworkSlideProps> = ({ isActive }) 
         </div>
 
         {/* Network Distribution Table */}
-        <div className="bg-muted/20 rounded-lg p-5 border border-border/30 flex-1">
+        <div className="bg-muted/20 rounded-lg p-5 border border-border/30">
           <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
             <Building2 className="w-4 h-4 text-primary" />
             Network Distribution by Country

@@ -119,12 +119,15 @@ export const Presentation: React.FC = () => {
   return (
     <div className="w-full h-screen bg-background flex flex-col">
       {/* Main presentation area */}
-      <div className="flex-1 relative overflow-hidden">
+      <div className="flex-1 relative overflow-hidden bg-background">
         {/* Slide container with aspect ratio */}
-        <div className="absolute inset-4 md:inset-8 flex items-center justify-center">
+        <div className="absolute inset-2 md:inset-4 lg:inset-6 flex items-center justify-center">
           <div 
-            className="w-full max-w-[1600px] aspect-video bg-card rounded-lg shadow-2xl overflow-hidden relative"
-            style={{ maxHeight: 'calc(100vh - 120px)' }}
+            className="w-full max-w-[1600px] bg-card rounded-lg shadow-2xl overflow-hidden relative border border-border/50"
+            style={{ 
+              height: 'calc(100vh - 100px)',
+              maxHeight: 'calc(100vh - 100px)',
+            }}
           >
             {slides.map((slide, index) => {
               const SlideComponent = slide.component;
@@ -140,30 +143,36 @@ export const Presentation: React.FC = () => {
       </div>
 
       {/* Navigation controls */}
-      <div className="h-16 border-t border-border/50 bg-card/50 backdrop-blur-sm flex items-center justify-between px-4 md:px-8">
+      <div className="h-16 border-t border-border/50 bg-card/80 backdrop-blur-md flex items-center justify-between px-4 md:px-8 shadow-lg">
         {/* Left: Slide indicators */}
-        <div className="flex items-center gap-1.5 overflow-x-auto max-w-[40%]">
+        <div className="flex items-center gap-2 overflow-x-auto max-w-[40%] scrollbar-hide">
           {slides.map((slide, index) => (
             <button
               key={slide.id}
               onClick={() => goToSlide(index)}
               className={cn(
-                "w-2 h-2 rounded-full transition-all duration-300 shrink-0",
+                "rounded-full transition-all duration-300 shrink-0 flex items-center gap-1.5 group",
                 currentSlide === index 
-                  ? "w-6 bg-primary" 
-                  : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  ? "w-6 h-2 bg-primary shadow-lg shadow-primary/50" 
+                  : "w-2 h-2 bg-muted-foreground/40 hover:bg-muted-foreground/60 hover:w-3"
               )}
-              title={slide.label}
-            />
+              title={`${index + 1}. ${slide.label}`}
+            >
+              {currentSlide === index && (
+                <span className="text-[10px] font-semibold text-primary-foreground ml-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {index + 1}
+                </span>
+              )}
+            </button>
           ))}
         </div>
 
         {/* Center: Slide number */}
-        <div className="text-sm font-sans text-muted-foreground">
-          <span className="text-foreground font-medium">{currentSlide + 1}</span>
-          <span className="mx-1">/</span>
-          <span>{slides.length}</span>
-          <span className="ml-3 text-xs hidden md:inline">
+        <div className="text-sm font-sans text-muted-foreground flex items-center gap-2">
+          <span className="text-foreground font-semibold text-base">{currentSlide + 1}</span>
+          <span className="mx-1 text-muted-foreground/60">/</span>
+          <span className="text-muted-foreground">{slides.length}</span>
+          <span className="ml-3 text-xs hidden md:inline text-muted-foreground/80">
             — {slides[currentSlide].label}
           </span>
         </div>

@@ -19,27 +19,35 @@ export const SlideContainer: React.FC<SlideContainerProps> = ({
   useEffect(() => {
     if (isActive) {
       setShouldAnimate(true);
+    } else {
+      setShouldAnimate(false);
     }
   }, [isActive]);
 
-  if (!isActive) return null;
-
   const variantStyles = {
-    default: "p-8 md:p-12 lg:p-16",
+    default: "p-6 md:p-8 lg:p-10",
     hero: "p-0",
-    centered: "p-8 md:p-12 lg:p-16 flex flex-col items-center justify-center text-center",
+    centered: "p-6 md:p-8 lg:p-10 flex flex-col items-center justify-center text-center",
   };
 
   return (
     <div
       className={cn(
-        "absolute inset-0 w-full h-full overflow-hidden",
+        "absolute inset-0 w-full h-full overflow-y-auto overflow-x-hidden transition-opacity duration-500 scrollbar-thin",
         variantStyles[variant],
-        shouldAnimate && "animate-fade-in",
+        isActive 
+          ? "opacity-100 z-10 pointer-events-auto" 
+          : "opacity-0 z-0 pointer-events-none",
+        shouldAnimate && isActive && "animate-fade-in",
         className
       )}
+      style={{
+        visibility: isActive ? 'visible' : 'hidden',
+      }}
     >
-      {children}
+      <div className="w-full pb-4">
+        {children}
+      </div>
     </div>
   );
 };

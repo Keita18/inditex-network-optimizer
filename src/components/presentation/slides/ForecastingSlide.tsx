@@ -22,7 +22,7 @@ export const ForecastingSlide: React.FC<ForecastingSlideProps> = ({ isActive }) 
         subtitle="Selecting the optimal prediction method for 2021"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Left: Methodology */}
         <div className="space-y-6">
           <div 

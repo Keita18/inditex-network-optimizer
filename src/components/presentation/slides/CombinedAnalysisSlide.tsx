@@ -19,19 +19,19 @@ export const CombinedAnalysisSlide: React.FC<CombinedAnalysisSlideProps> = ({ is
   return (
     <SlideContainer isActive={isActive}>
       <SectionTitle 
-        number="11" 
+        number="5.1" 
         title="Combined Analysis" 
         subtitle="Brexit + Hydrogen Fleet Scenarios"
       />
 
-      <div className="flex-1 flex flex-col gap-5">
+      <div className="flex flex-col gap-4">
         <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
           <Shield className="w-4 h-4 text-primary" />
           Robustness Across Brexit Scenarios
         </h3>
 
         {/* Combined Analysis Table */}
-        <div className="bg-muted/20 rounded-lg border border-border/30 overflow-hidden flex-1">
+        <div className="bg-muted/20 rounded-lg border border-border/30 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>

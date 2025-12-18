@@ -25,7 +25,7 @@ export const FleetInvestmentSlide: React.FC<FleetInvestmentSlideProps> = ({ isAc
         subtitle="Evaluating transportation technology investments"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {/* Left: Cost Comparison Chart */}
         <div className="space-y-4">
           <div 

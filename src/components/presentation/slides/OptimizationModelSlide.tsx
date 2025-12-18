@@ -32,12 +32,12 @@ export const OptimizationModelSlide: React.FC<OptimizationModelSlideProps> = ({ 
   return (
     <SlideContainer isActive={isActive}>
       <SectionTitle 
-        number="05" 
+        number="3" 
         title="Optimization Model" 
         subtitle="Mathematical Formulation"
       />
 
-      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Column */}
         <div className="flex flex-col gap-5">
           {/* Objective Function */}

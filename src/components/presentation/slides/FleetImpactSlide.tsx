@@ -25,12 +25,12 @@ export const FleetImpactSlide: React.FC<FleetImpactSlideProps> = ({ isActive }) 
   return (
     <SlideContainer isActive={isActive}>
       <SectionTitle 
-        number="10" 
+        number="4.1" 
         title="Fleet Technologies" 
         subtitle="Network Structure Impact"
       />
 
-      <div className="flex-1 flex flex-col gap-5">
+      <div className="flex flex-col gap-4">
         {/* Comparison Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Original Fleet */}

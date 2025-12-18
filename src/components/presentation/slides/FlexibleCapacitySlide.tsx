@@ -13,12 +13,12 @@ export const FlexibleCapacitySlide: React.FC<FlexibleCapacitySlideProps> = ({ is
   return (
     <SlideContainer isActive={isActive}>
       <SectionTitle 
-        number="3a"
+        number="3.3"
         title="Flexible Capacity" 
         subtitle="Strategic overtime utilization — 20% overcapacity option"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Left: Concept & Results */}
         <div className="space-y-4">
           {/* Mechanism explanation */}

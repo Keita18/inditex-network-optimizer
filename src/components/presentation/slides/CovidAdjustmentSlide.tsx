@@ -18,12 +18,12 @@ export const CovidAdjustmentSlide: React.FC<CovidAdjustmentSlideProps> = ({ isAc
   return (
     <SlideContainer isActive={isActive}>
       <SectionTitle 
-        number="04" 
+        number="2.1" 
         title="Covid-19 Demand Adjustment" 
         subtitle="2021 Forecast Correction"
       />
 
-      <div className="flex-1 flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
         {/* Key Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gradient-to-br from-destructive/10 to-destructive/5 rounded-lg p-6 border border-destructive/20">

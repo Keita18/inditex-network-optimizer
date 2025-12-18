@@ -26,12 +26,12 @@ export const DatasetOverviewSlide: React.FC<DatasetOverviewSlideProps> = ({ isAc
   return (
     <SlideContainer isActive={isActive}>
       <SectionTitle 
-        number="02" 
+        number="1.1" 
         title="Dataset Overview" 
         subtitle="Understanding Our Data Foundation"
       />
 
-      <div className="flex-1 flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
         {/* Data Points Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {dataPoints.map((point, index) => (
@@ -53,7 +53,7 @@ export const DatasetOverviewSlide: React.FC<DatasetOverviewSlideProps> = ({ isAc
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Temporal Data */}
           <div className="bg-muted/20 rounded-lg p-5 border border-border/30">
             <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">

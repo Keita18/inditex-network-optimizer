@@ -46,12 +46,12 @@ export const NetworkStructureSlide: React.FC<NetworkStructureSlideProps> = ({ is
   return (
     <SlideContainer isActive={isActive}>
       <SectionTitle 
-        number="07" 
+        number="3.2" 
         title="Network Structure" 
         subtitle="Warehouse Distribution by Size"
       />
 
-      <div className="flex-1 flex flex-col gap-5">
+      <div className="flex flex-col gap-4">
         <p className="text-sm text-muted-foreground">
           32 centres distributed by country and size (Small/Medium/Large):
         </p>
