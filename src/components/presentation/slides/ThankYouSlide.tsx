@@ -25,7 +25,7 @@ export const ThankYouSlide: React.FC<ThankYouSlideProps> = ({ isActive }) => {
       </div>
 
       {/* Content - justify-center s'occupe de tout centrer verticalement */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8 gap-y-10" style={{ paddingTop: "8rem" }}>
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8 gap-y-10" style={{ paddingTop: "10rem" }}>
         
         {/* Main title & Subtitle */}
         <div className="animate-slide-up" style={{ animationDelay: "0ms" }}>
@@ -82,7 +82,7 @@ export const ThankYouSlide: React.FC<ThankYouSlideProps> = ({ isActive }) => {
           </div>
 
           {/* Infos détaillées du cours */}
-          <div className="flex flex-col items-center gap-2 pt-14 border-t border-border/50 min-w-[300px]">
+          <div className="flex flex-col items-center gap-2 pt-14 border-t border-border/50 min-w-[300px]" style={{ paddingTop: "10rem" }}>
             <div className="text-xs text-muted-foreground font-sans uppercase tracking-widest">
               LLSMG2003 • Production & Operations Modelling
             </div>
