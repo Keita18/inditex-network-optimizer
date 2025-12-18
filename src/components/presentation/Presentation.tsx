@@ -6,11 +6,17 @@ import { ChevronLeft, ChevronRight, Maximize2, Minimize2 } from "lucide-react";
 import { TitleSlide } from "./slides/TitleSlide";
 import { AgendaSlide } from "./slides/AgendaSlide";
 import { IntroductionSlide } from "./slides/IntroductionSlide";
+import { DatasetOverviewSlide } from "./slides/DatasetOverviewSlide";
 import { ForecastingSlide } from "./slides/ForecastingSlide";
-import { NetworkOptimizationSlide } from "./slides/NetworkOptimizationSlide";
+import { CovidAdjustmentSlide } from "./slides/CovidAdjustmentSlide";
+import { OptimizationModelSlide } from "./slides/OptimizationModelSlide";
+import { BaseNetworkSlide } from "./slides/BaseNetworkSlide";
+import { NetworkStructureSlide } from "./slides/NetworkStructureSlide";
 import { FlexibleCapacitySlide } from "./slides/FlexibleCapacitySlide";
 import { FleetInvestmentSlide } from "./slides/FleetInvestmentSlide";
+import { FleetImpactSlide } from "./slides/FleetImpactSlide";
 import { BrexitSensitivitySlide } from "./slides/BrexitSensitivitySlide";
+import { CombinedAnalysisSlide } from "./slides/CombinedAnalysisSlide";
 import { RecommendationsSlide } from "./slides/RecommendationsSlide";
 import { ThankYouSlide } from "./slides/ThankYouSlide";
 
@@ -18,11 +24,17 @@ const slides = [
   { id: "title", component: TitleSlide, label: "Title" },
   { id: "agenda", component: AgendaSlide, label: "Agenda" },
   { id: "introduction", component: IntroductionSlide, label: "Introduction" },
+  { id: "dataset", component: DatasetOverviewSlide, label: "Dataset" },
   { id: "forecasting", component: ForecastingSlide, label: "Forecasting" },
-  { id: "network", component: NetworkOptimizationSlide, label: "Network" },
+  { id: "covid", component: CovidAdjustmentSlide, label: "Covid Adjustment" },
+  { id: "optimization", component: OptimizationModelSlide, label: "Optimization Model" },
+  { id: "base-network", component: BaseNetworkSlide, label: "Base Network" },
+  { id: "network-structure", component: NetworkStructureSlide, label: "Network Structure" },
   { id: "flexible", component: FlexibleCapacitySlide, label: "Flexibility" },
   { id: "fleet", component: FleetInvestmentSlide, label: "Fleet Investment" },
+  { id: "fleet-impact", component: FleetImpactSlide, label: "Fleet Impact" },
   { id: "brexit", component: BrexitSensitivitySlide, label: "Brexit" },
+  { id: "combined", component: CombinedAnalysisSlide, label: "Combined Analysis" },
   { id: "recommendations", component: RecommendationsSlide, label: "Recommendations" },
   { id: "thankyou", component: ThankYouSlide, label: "Thank You" },
 ];
@@ -130,15 +142,15 @@ export const Presentation: React.FC = () => {
       {/* Navigation controls */}
       <div className="h-16 border-t border-border/50 bg-card/50 backdrop-blur-sm flex items-center justify-between px-4 md:px-8">
         {/* Left: Slide indicators */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 overflow-x-auto max-w-[40%]">
           {slides.map((slide, index) => (
             <button
               key={slide.id}
               onClick={() => goToSlide(index)}
               className={cn(
-                "w-2 h-2 rounded-full transition-all duration-300",
+                "w-2 h-2 rounded-full transition-all duration-300 shrink-0",
                 currentSlide === index 
-                  ? "w-8 bg-primary" 
+                  ? "w-6 bg-primary" 
                   : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
               )}
               title={slide.label}
